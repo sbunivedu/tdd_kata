@@ -20,7 +20,9 @@ First, write a test for the simplest possible scenario: passing an empty string 
 ```java
 StringCalculatorTest.java
 
-import org.junit.jupiter.api.Test;import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class StringCalculatorTest {
     @Test
     void add_emptyString_returnsZero() {
@@ -53,7 +55,8 @@ Now write a test for a single number. Passing "1" should return 1.
 ```java
 StringCalculatorTest.java
 
-@Testvoid add_singleNumber_returnsThatNumber() {
+@Test
+void add_singleNumber_returnsThatNumber() {
     StringCalculator calculator = new StringCalculator();
     assertEquals(1, calculator.add("1"));
 }
@@ -85,7 +88,8 @@ Write a test for two comma-separated numbers. Passing "1,2" should return 3.
 ```java
 StringCalculatorTest.java
 
-@Testvoid add_twoNumbersCommaSeparated_returnsSum() {
+@Test
+void add_twoNumbersCommaSeparated_returnsSum() {
     StringCalculator calculator = new StringCalculator();
     assertEquals(3, calculator.add("1,2"));
 }
@@ -190,7 +194,8 @@ Add a test case to handle newlines to your existing test file.
 ```java
 StringCalculatorTest.java
 
-@Testvoid add_numbersSeparatedByNewlinesOrCommas_returnsSum() {
+@Test
+void add_numbersSeparatedByNewlinesOrCommas_returnsSum() {
     assertEquals(6, calculator.add("1\n2,3"));
 }
 ```
@@ -231,7 +236,9 @@ We'll start with a "gutter game" where the player rolls 20 zeros.
 ```java
 BowlingGameTest.java
 
-import org.junit.jupiter.api.BeforeEach;import org.junit.jupiter.api.Test;import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 class BowlingGameTest {
     private BowlingGame game;
 
@@ -280,7 +287,8 @@ Let's test hitting 1 pin on every single roll (20 rolls total). The expected sco
 ```java
 BowlingGameTest.java
 
-@Testvoid score_allOnes_returnsTwenty() {
+@Test
+void score_allOnes_returnsTwenty() {
     rollMany(20, 1);
     assertEquals(20, game.score());
 }
@@ -315,7 +323,8 @@ Now we introduce game logic. If a player rolls a spare (e.g., 5 then 5), the nex
 ```java
 BowlingGameTest.java
 
-@Testvoid score_oneSpare_addsNextRollBonus() {
+@Test
+void score_oneSpare_addsNextRollBonus() {
     game.roll(5);
     game.roll(5); // Spare!
     game.roll(3);
