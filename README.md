@@ -2,6 +2,11 @@
 
 Here is a practical, step-by-step example of Test-Driven Development (TDD) using the popular String Calculator Kata. We will implement a StringCalculator that sums comma-separated numbers using the strict TDD Red-Green-Refactor cycle. [1, 2, 3] 
 
+To run the test suits:
+```
+mvn test
+```
+
 ## Prerequisites
 Make sure you have JUnit 5 added to your Maven pom.xml: [4] 
 
@@ -126,7 +131,10 @@ Now that we are in a safe "Green" state, we clean up the code without changing i
 ```java
 Refactored StringCalculatorTest.java
 
-import org.junit.jupiter.api.BeforeEach;import org.junit.jupiter.api.Test;import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class StringCalculatorTest {
     private StringCalculator calculator;
 
